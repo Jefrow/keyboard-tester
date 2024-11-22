@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  margin: 0;
+}
+
+.keyboard-tester {
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  gap: 1em;
+}
+
+.pressed-keys {
+  display: wrap;
+  flex-wrap:wrap; 
+  padding: 1em;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 1em;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  max-height: 100px;
+  overflow-y: scroll;;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.main-section-wrapper {
+  display:flex; 
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
+}
+
+.key {
+  padding: 0.5em 1em;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  min-width: 40px;
+  text-align: center;
+}
+
+.key:active,
+.key:focus {
+  background-color: #d1d1d1;
+}
+
+/*Navigation and Arrow Keys*/
+
+.navigation-and-arrow-section {
+  display:grid; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "insert home pageup"
+                       "delete end pagedown"
+                       ". . ."
+                       ".  arrowup ."
+                       "arrowleft arrowdown arrowright";
+}
+
+.insert{grid-area: insert;}
+.home{grid-area: home;}
+.pageup{grid-area: pageup;}
+.delete{grid-area: delete;}
+.end{grid-area: end;}
+.pagedown{grid-area: pagedown;}
+.arrowup{grid-area: arrowup;}
+.arrowleft{grid-area: arrowleft;}
+.arrowdown{grid-area: arrowdown;}
+.arrowright{grid-area: arrowright;}
+
+/**/
+
+.reset-button {
+  padding: 0.7em 2em;
+  font-size: 1em;
+  color: white;
+  background-color: #ff5e5e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.reset-button:hover {
+  background-color: #e04646;
+}
+
+
+.key.active {
+  background-color: #d1d1d1; /* Change background color for active keys */
+  border-color: #666; /* Optional: Darken the border for pressed keys */
+}
